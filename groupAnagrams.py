@@ -6,7 +6,7 @@ import typing
 
 
 class Solution:
-    def groupAnagrams(self, strs: typing.List[str]) -> List[List[str]]:
+    def groupAnagrams(self, strs: typing.List[str]) -> typing.List[typing.List[str]]:
 
         map = {}
         
