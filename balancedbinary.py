@@ -38,3 +38,24 @@ class Solution:
         check(root)
 
         return self.isBalanced
+    
+
+#Cleaner code but it runs slower than the previous solution
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        self.isBalanced = True
+        def depth(root):
+            if not root:
+                return 0
+
+            leftdepth = depth(root.left)
+            rightdepth = depth(root.right)
+            
+            if abs(leftdepth - rightdepth) > 1:
+                self.isBalanced = False
+                return 2
+            else:
+                return 1 + max(depth(root.left), depth(root.right))
+
+        depth(root)
+
+        return self.isBalanced
